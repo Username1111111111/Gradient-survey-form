@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<title>Survey Form</title>
+	 	<link rel="stylesheet" type="text/css" href="style.css"> 
+		<!--  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+	</head>
+
+	<body>
+
+		<header>
+			<h1 id="title">Survey Form</h1>
+		</header>
+	
+		<main>
+			<p id="description">Let us know about your programming language preferences</p>
+			<form action="" id="survey-form">
+				
+				<div class="row-wrapper">
+					<div class="label-wrapper"><label for="input1" id="name-label">Name: </label></div>
+					<div class="input-wrapper">
+						<div class="mini-row-wrapper"><input type="text" name="input1" id="name" pattern="[\w\s]{3,}" placeholder="Donald" required></div>
+					</div>
+				</div>
+				<div class="row-wrapper">
+					<div class="label-wrapper"><label for="input2" id="email-label">Email: </label></div>
+					<div class="input-wrapper">
+						<div class="mini-row-wrapper"><input type="email" name="input2" id="email" pattern="[\w\d]{3,}[@]{1}[\w]{2,}[.]{1}[\w]{2,}" placeholder="yourmail@mail.com" required></div>
+					</div>
+				</div>
+				<div class="row-wrapper">
+					<div class="label-wrapper"><label for="input3" id="number-label">How old are you: </label></div>
+					<div class="input-wrapper">
+						<div class="mini-row-wrapper"><input type="number" name="input3" id="number" pattern="[\d]+" min="1" max="200" placeholder="53" required></div>
+					</div>
+				</div>
+				
+				<div class="row-wrapper">
+					<div class="label-wrapper"><label for="select1">Your occupation: </label></div>
+					<div class="input-wrapper"><select name="select1" id="dropdown">
+							<div class="mini-row-wrapper">
+								<option value="Pupil">Pupil</option>
+							</div>
+							<div class="mini-row-wrapper">
+								<option value="Student">Student</option>
+							</div>
+							<div class="mini-row-wrapper">
+								<option value="Employed">Employed</option>
+							</div>
+							<div class="mini-row-wrapper">
+								<option value="Self-employed">Self-employed</option>
+							</div>
+							<div class="mini-row-wrapper">
+								<option value="Businessmen">Businessmen</option>
+							</div>
+							<div class="mini-row-wrapper">
+								<option value="Investor">Investor</option>
+							</div>
+						</select></div>
+				</div>
+				
+				<div class="row-wrapper">
+					<div class="label-wrapper"><label for="radio-gender">Gender: </label></div>
+					<ul class="input-wrapper">
+						<li class="mini-row-wrapper"><input type="radio" name="radio-gender" id="" value="Male">Male</input></li>
+						<li class="mini-row-wrapper"><input type="radio" name="radio-gender" id="" value="Female">Female</input></li>
+						<li class="mini-row-wrapper"><input type="radio" name="radio-gender" id="" value="Other">Other</input></li>
+					</ul>
+				</div>
+								
+				<div class="row-wrapper">
+					<div class="label-wrapper"><label for="checkbox-wrapper">What programming language do you like: </label></div>
+					<ul class="input-wrapper">
+						<li class="mini-row-wrapper"><label for="input7"><input type="checkbox" name="input7" id="" value="Java">Java</label></li>
+						<li class="mini-row-wrapper"><label for="input8"><input type="checkbox" name="input8" id="" value="Python">Python</label></li>
+						<li class="mini-row-wrapper"><label for="input9"><input type="checkbox" name="input9" id="" value="PHP">PHP</label></li>
+						<li class="mini-row-wrapper"><label for="input10"><input type="checkbox" name="input10" id="" value="C#">C#</label></li>
+						<li class="mini-row-wrapper"><label for="input11"><input type="checkbox" name="input11" id="" value="C++">C++</label></li>
+						<li class="mini-row-wrapper"><label for="input12"><input type="checkbox" name="input12" id="" value="Assembler">Assembler</label></li>
+						<li class="mini-row-wrapper"><label for="input13"><input type="checkbox" name="input13" id="" value="Pascal">Pascal</label></li>
+						<li class="mini-row-wrapper"><label for="input14"><input type="checkbox" name="input14" id="" value="Lisp">Lisp</label></li>
+						<li class="mini-row-wrapper"><label for="input15"><input type="checkbox" name="input15" id="" value="Lua">Lua</label></li>
+						<li class="mini-row-wrapper"><label for="input16"><input type="checkbox" name="input16" id="" value="JavaScript">JavaScript</label></li>
+						<li class="mini-row-wrapper"><label for="input16"><input type="checkbox" name="input17" id="" value="Ruby">Ruby</label></li>
+						<li class="mini-row-wrapper"><label for="input16"><input type="checkbox" name="input18" id="" value="Perl">Perl</label></li>
+						<li class="mini-row-wrapper"><label for="input16"><input type="checkbox" name="input19" id="" value=">SQL">SQL</label></li>
+						<li class="mini-row-wrapper"><label for="input16"><input type="checkbox" name="input20" id="" value="Swift">Swift</label></li>
+					</ul>
+				</div>
+				
+				<div class="row-wrapper">
+					<div class="label-wrapper"><label for="additional comments">Additional comments: </label></div>
+					<div class="input-wrapper"><textarea name="additional comments" id="" cols="33" rows="4" placeholder="Enter additional languages here..."></textarea></div>
+				</div>
+				
+				<div class="row-wrapper">
+					<div class="input-wrapper"><button type="submit" id="submit">Submit</button></div>
+				</div>
+
+			</form>
+		</main>
+		
+		<footer></footer>
+		
+	</body>
+</html>
+
+<!-- 
+
+	(header>h1#title{Survey Form})+(main>p#description{Let us know about your ... }+form#survey-form>())+footer
+	
+	(div.row-wrapper>((div.label-wrapper>label[for="input$"]{input-name$: })+(div.input-wrapper>(div.mini-row-wrapper>inp[name="input$" type="text"]))))*3
+	
+	div.row-wrapper>(div.label-wrapper>label[for="select1"]{select-name1: })+div.input-wrapper>select[name="select1"]>(div.mini-row-wrapper>(opt[value="value$"]{value of option $}))*5
+	
+	div.row-wrapper>((div.label-wrapper>label[for="radio"]{radio-name: })+ul.input-wrapper>(li.mini-row-wrapper>inp[name="radio" type="radio" value="value$"]{input-name$@4})*3)
+		
+	div.row-wrapper>((div.label-wrapper>label[for="checkbox-wrapper"]{checkbox-name: })+ul.input-wrapper>(li.mini-row-wrapper>(label[for="input$@7"]>inp[name="input$@7" type="checkbox" value="input-value$@7"]+{input-name$@7}))*10)
+	
+	div.row-wrapper>(div.label-wrapper>label[for="additional comments"]{Additional comments: })+div.input-wrapper>textarea.input-wrapper[name="additional comments" rows="5" cols="40" placeholder="Enter additional commentes here..."]
+	
+	div.row-wrapper>div.input-wrapper>button[type="submit"]{Submit}
+
+
+-->
